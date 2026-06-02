@@ -1,0 +1,13 @@
+; minim.mdp - utilizado como entrada para la minimización de energía
+integrator  = steep      ; Algoritmo de descenso de gradiente (CORREGIDO)
+emtol       = 1000.0    ; Detener la minimización cuando la fuerza máxima < 1000.0 kJ/mol/nm
+emstep      = 0.01      ; Paso de minimización
+nsteps      = 50000     ; Número máximo de pasos a realizar
+
+; Parámetros de interacciones no enlazadas
+nstlist         = 1         ; Frecuencia para actualizar la lista de vecinos
+cutoff-scheme   = Verlet    ; Esquema de corte
+coulombtype     = PME       ; Electrostática de partículas Mesh Ewald
+rcoulomb        = 1.0       ; Corte electrostático
+rvdw            = 1.0       ; Corte de Van der Waals
+pbc             = xyz       ; Condiciones de contorno periódicas
