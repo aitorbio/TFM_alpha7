@@ -1,0 +1,67 @@
+REMARK  Name = data/PNU_original.pdb
+REMARK  30 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C01_2  and  O02_3
+REMARK    2  A    between atoms: O02_3  and  C03_4
+REMARK    3  A    between atoms: C05_6  and  O06_7
+REMARK    4  A    between atoms: O06_7  and  C07_8
+REMARK    5  A    between atoms: C08_9  and  N09_10
+REMARK    6  A    between atoms: C15_16  and  C16_17
+REMARK    7  A    between atoms: C01_23  and  O02_24
+REMARK    8  A    between atoms: O02_24  and  C03_25
+REMARK    9  A    between atoms: C05_27  and  O06_28
+REMARK   10  A    between atoms: O06_28  and  C07_29
+REMARK   11  A    between atoms: C08_30  and  N09_31
+REMARK   12  A    between atoms: C15_37  and  C16_38
+REMARK   13  A    between atoms: C01_44  and  O02_45
+REMARK   14  A    between atoms: O02_45  and  C03_46
+REMARK   15  A    between atoms: C05_48  and  O06_49
+REMARK   16  A    between atoms: O06_49  and  C07_50
+REMARK   17  A    between atoms: C08_51  and  N09_52
+REMARK   18  A    between atoms: C15_58  and  C16_59
+REMARK   19  A    between atoms: C01_65  and  O02_66
+REMARK   20  A    between atoms: O02_66  and  C03_67
+REMARK   21  A    between atoms: C05_69  and  O06_70
+REMARK   22  A    between atoms: O06_70  and  C07_71
+REMARK   23  A    between atoms: C08_72  and  N09_73
+REMARK   24  A    between atoms: C15_79  and  C16_80
+REMARK   25  A    between atoms: C01_86  and  O02_87
+REMARK   26  A    between atoms: O02_87  and  C03_88
+REMARK   27  A    between atoms: C05_90  and  O06_91
+REMARK   28  A    between atoms: O06_91  and  C07_92
+REMARK   29  A    between atoms: C08_93  and  N09_94
+REMARK   30  A    between atoms: C15_100  and  C16_101
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  N09 I34 A 607     153.974 134.467 135.121  0.00  0.00    +0.000 N 
+ATOM      2  C10 I34 A 607     155.116 133.837 134.702  0.00  0.00    +0.000 C 
+ATOM      3  O11 I34 A 607     155.515 133.823 133.542  0.00  0.00    +0.000 OA
+ATOM      4  N12 I34 A 607     155.831 133.220 135.719  0.00  0.00    +0.000 N 
+ATOM      5  C13 I34 A 607     157.024 132.511 135.641  0.00  0.00    +0.000 A 
+ATOM      6  C14 I34 A 607     157.774 132.187 134.493  0.00  0.00    +0.000 A 
+ATOM      7  C15 I34 A 607     158.821 131.492 134.952  0.00  0.00    +0.000 A 
+ATOM      8  C16 I34 A 607     159.992 130.846 134.307  0.00  0.00    +0.000 C 
+ATOM      9  O17 I34 A 607     158.749 131.390 136.293  0.00  0.00    +0.000 OA
+ATOM     10  N18 I34 A 607     157.581 132.058 136.733  0.00  0.00    +0.000 NA
+ATOM     11  H   I34 A 607     153.817 134.480 136.093  0.00  0.00    +0.000 HD
+ATOM     12  H   I34 A 607     155.439 133.295 136.619  0.00  0.00    +0.000 HD
+ENDROOT
+BRANCH   1  17
+ATOM     13 CL1  I34 A 607     151.984 135.728 130.519  0.00  0.00    +0.000 Cl
+ATOM     14  C03 I34 A 607     150.947 136.386 132.927  0.00  0.00    +0.000 A 
+ATOM     15  C04 I34 A 607     150.957 136.402 134.309  0.00  0.00    +0.000 A 
+ATOM     16  C05 I34 A 607     151.970 135.768 135.001  0.00  0.00    +0.000 A 
+ATOM     17  C08 I34 A 607     152.993 135.102 134.321  0.00  0.00    +0.000 A 
+ATOM     18  C19 I34 A 607     152.978 135.081 132.931  0.00  0.00    +0.000 A 
+ATOM     19  C20 I34 A 607     151.966 135.726 132.251  0.00  0.00    +0.000 A 
+BRANCH  14  21
+ATOM     20  C01 I34 A 607     148.832 137.479 132.841  0.00  0.00    +0.000 C 
+ATOM     21  O02 I34 A 607     149.944 136.905 132.165  0.00  0.00    +0.000 OA
+ENDBRANCH  14  21
+BRANCH  16  22
+ATOM     22  O06 I34 A 607     152.076 135.738 136.362  0.00  0.00    +0.000 OA
+ATOM     23  C07 I34 A 607     151.096 136.448 137.119  0.00  0.00    +0.000 C 
+ENDBRANCH  16  22
+ENDBRANCH   1  17
+TORSDOF 3
