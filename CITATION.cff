@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "Si utilizas este pipeline computacional o los datos de este TFM, por favor cita este repositorio como se indica a continuación."
+authors:
+  - given-names: "Aitor"
+    family-names: "Malonda Oliver"
+title: "Cribado Virtual y Diseño de Fármacos Basado en Estructura (SBDD) para Moduladores Alostéricos Positivos de Tipo II en el Canal Nicotínico alpha7 nAChR"
+version: 1.0.0
+doi: "10.5281/zenodo.xxxxxxx" # Rellenar una vez obtenido el DOI de Zenodo si se publica de forma permanente
+date-released: 2026-06-02
+url: "https://github.com/aitor/tfm_alpha7"
+repository-code: "https://github.com/aitor/tfm_alpha7"
+keywords:
+  - "molecular docking"
+  - "alpha7 nAChR"
+  - "positive allosteric modulator"
+  - "RDKit"
+  - "AutoDock Vina"
+  - "ProLIF"
+  - "ADMET"
+  - "bioinformatics"
