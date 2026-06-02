@@ -120,4 +120,4 @@ Este proyecto está bajo la Licencia MIT. Para más detalles, consulta el archiv
 
 Si utilizas estos scripts o la metodología en tu investigación académica, por favor cita el TFM correspondiente:
 
-> **Aitor Malonda (2026).** *Cribado Virtual y Diseño de Fármacos Basado en Estructura para Moduladores Alostéricos Positivos del Canal $\alpha7$ nAChR*. Trabajo de Fin de Máster en Bioinformática. Universitat Oberta de Catalunya.
+> **Aitor Malonda (2026).** *Cribado Virtual y Diseño de Fármacos Basado en Estructura para Moduladores Alostéricos Positivos del Canal alpha7 nAChR*. Trabajo de Fin de Máster en Bioinformática. Universitat Oberta de Catalunya.
