@@ -108,9 +108,6 @@ python scripts/admet_import_results.py \
 
 # 6. Filtrado final de candidatos farmacológicamente viables
 python scripts/final_filter.py
-
-# 7. Generación del reporte resumen e imágenes del pipeline
-python scripts/generate_summary.py --results scripts/results/ --figures scripts/figures/
 ```
 
 ---
