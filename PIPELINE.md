@@ -148,15 +148,3 @@ python scripts/final_filter.py
 ```
 *   **Criterios aplicados:** Puntuación CNS MPO $\ge 4.0$, permeabilidad de la BHE por consenso, no sustrato de la Glicoproteína-P (P-gp), no inhibidor de hERG (toxicidad cardíaca), estabilidad microsomal (vida media $> 30\text{ min}$), sin toxicidad hepática (DILI) y Ames negativo (mutagenicidad).
 *   **Resultados:** Se almacena el listado en `scripts/results/candidates_strict_admet_passed.csv` y las imágenes en `scripts/figures/final_candidates_2d.png`.
-
----
-
-## Paso 7: Reporte y Resumen Ejecutivo General
-
-Genera los gráficos y estadísticas finales consolidadas del pipeline completo, incluyendo diagramas de cascada de retención de compuestos y descomposición del score de priorización:
-```bash
-python scripts/generate_summary.py \
-    --results scripts/results/ \
-    --figures scripts/figures/
-```
-*   La salida generará la figura integrada [`fig_pipeline_summary.png`](file:///Users/aitor/tfm_alpha7/scripts/figures/fig_pipeline_summary.png) que resume visualmente el éxito del cribado para su inclusión directa en el manuscrito del TFM.
