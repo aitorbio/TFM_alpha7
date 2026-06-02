@@ -1,0 +1,40 @@
+name: tfm_alpha7
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+
+dependencies:
+  # ── Python ────────────────────────────────────────────────────────────────
+  - python=3.10
+
+  # ── Química computacional (conda-forge) ───────────────────────────────────
+  - rdkit=2023.09          # propiedades fisicoquímicas, PAINS, Morgan FP
+  - openbabel=3.1.1        # conversión SMILES → PDBQT, generación 3D
+
+  # ── AutoDock Vina (bioconda) ───────────────────────────────────────────────
+  - autodock-vina          # docking molecular
+
+  # ── Datos y análisis ──────────────────────────────────────────────────────
+  - pandas>=1.5
+  - numpy>=1.24
+  - scipy>=1.9
+  - scikit-learn>=1.1
+
+  # ── Visualización ─────────────────────────────────────────────────────────
+  - matplotlib>=3.6
+  - seaborn
+
+  # ── Red y APIs ────────────────────────────────────────────────────────────
+  - requests
+  - urllib3
+
+  # ── Utilidades ────────────────────────────────────────────────────────────
+  - tqdm                   # barras de progreso
+  - pip
+
+  # ── Instalados con pip (no disponibles en conda-forge) ────────────────────
+  - pip:
+    - prolif>=1.1.0        # huellas digitales de interacción proteína-ligando
+    - MDAnalysis>=2.4      # análisis de trayectorias MD (requerido por ProLIF)
+    - mdtraj                # análisis MD alternativo
