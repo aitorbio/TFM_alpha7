@@ -12,6 +12,7 @@ repository-code: "https://github.com/aitor/tfm_alpha7"
 keywords:
   - "molecular docking"
   - "alpha7 nAChR"
+  - "transmembrane domain"
   - "positive allosteric modulator"
   - "RDKit"
   - "AutoDock Vina"
