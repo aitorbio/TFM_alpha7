@@ -19,7 +19,7 @@ size_x   = 24.0
 size_y   = 24.0
 size_z   = 24.0
 
-# Search parameters (§3.5, Bouchouireb et al. 2024)
+# Search parameters (3.5, Bouchouireb et al. 2024)
 exhaustiveness = 32
 num_modes      = 20
 energy_range   = 3
