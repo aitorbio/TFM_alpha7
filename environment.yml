@@ -12,9 +12,6 @@ dependencies:
   - rdkit=2023.09          # propiedades fisicoquímicas, PAINS, Morgan FP
   - openbabel=3.1.1        # conversión SMILES → PDBQT, generación 3D
 
-  # ── AutoDock Vina (bioconda) ───────────────────────────────────────────────
-  - autodock-vina          # docking molecular
-
   # ── Datos y análisis ──────────────────────────────────────────────────────
   - pandas>=1.5
   - numpy>=1.24
@@ -25,7 +22,7 @@ dependencies:
   - matplotlib>=3.6
   - seaborn
 
-  # ── Red y APIs ────────────────────────────────────────────────────────────
+  # ── Red y APIs (no disponible su uso actualmente) ─────────────────────────
   - requests
   - urllib3
 
@@ -38,3 +35,15 @@ dependencies:
     - prolif>=1.1.0        # huellas digitales de interacción proteína-ligando
     - MDAnalysis>=2.4      # análisis de trayectorias MD (requerido por ProLIF)
     - mdtraj                # análisis MD alternativo
+
+# ─────────────────────────────────────────────────────────────────────────────
+# AutoDock Vina 1.2.0 debe instalarse manualmente (no disponible vía conda).
+# Descargar del repo:
+#   https://github.com/ccsb-scripps/AutoDock-Vina/releases/tag/v1.2.0
+# y guradar en:
+#   ~/miniconda3/envs/tfm_alpha7/bin/vina
+#
+# fpocket 4.0 también debe instalarse del repo:
+#   https://github.com/Discngine/fpocket
+# ─────────────────────────────────────────────────────────────────────────────
+
