@@ -73,25 +73,6 @@ conda install -c conda-forge -y \
 echo "  ✓ Paquetes conda-forge instalados"
 
 
-# ── 5. Instalar AutoDock Vina ─────────────────────────────────────────────────
-echo ""
-echo "── Instalando AutoDock Vina 1.2.x..."
-
-# Intentar desde bioconda primero, luego conda-forge
-if conda install -c bioconda -c conda-forge -y autodock-vina 2>/dev/null; then
-    echo "  ✓ AutoDock Vina instalado (bioconda)"
-elif conda install -c conda-forge -y autodock-vina 2>/dev/null; then
-    echo "  ✓ AutoDock Vina instalado (conda-forge)"
-else
-    echo "  ⚠ AutoDock Vina no disponible en conda."
-    echo "    Descarga manual desde:"
-    echo "    https://github.com/ccsb-scripps/AutoDock-Vina/releases"
-    echo "    Descarga 'vina_1.2.5_linux_x86_64' (Linux) o el equivalente para tu SO"
-    echo "    y colócalo en: $CONDA_PREFIX/bin/vina"
-    echo "    chmod +x $CONDA_PREFIX/bin/vina"
-fi
-
-
 # ── 6. Instalar paquetes pip ───────────────────────────────────────────────────
 echo ""
 echo "── Instalando paquetes pip (ProLIF, MDAnalysis, mdtraj)..."
