@@ -1,13 +1,31 @@
-; minim.mdp - utilizado como entrada para la minimización de energía
-integrator  = steep      ; Algoritmo de descenso de gradiente (CORREGIDO)
-emtol       = 1000.0    ; Detener la minimización cuando la fuerza máxima < 1000.0 kJ/mol/nm
-emstep      = 0.01      ; Paso de minimización
-nsteps      = 50000     ; Número máximo de pasos a realizar
+; Parámetros de control para la minimización energética (mini.mdp)
 
-; Parámetros de interacciones no enlazadas
-nstlist         = 1         ; Frecuencia para actualizar la lista de vecinos
-cutoff-scheme   = Verlet    ; Esquema de corte
-coulombtype     = PME       ; Electrostática de partículas Mesh Ewald
-rcoulomb        = 1.0       ; Corte electrostático
-rvdw            = 1.0       ; Corte de Van der Waals
-pbc             = xyz       ; Condiciones de contorno periódicas
+; 1. Parámetros de ejecución y algoritmo
+integrator  = steepest    ; Algoritmo de descenso de máxima pendiente (Steepest Descent)
+emtol       = 10.0        ; Criterio de convergencia: Fuerza máxima < 10.0 kJ/mol/nm
+emstep      = 0.01        ; Tamaño del paso de integración inicial (nm)
+nsteps      = 50000       ; Número máximo de pasos a ejecutar
+
+; 2. Parámetros de salida de datos (Frecuencia de guardado)
+nstxout     = 0           ; No guardar coordenadas en archivo de alta precisión .trr
+nstvout     = 0           ; No guardar velocidades
+nstfout     = 0           ; No guardar fuerzas
+nstlog      = 500         ; Escribir en el archivo de log cada 500 pasos
+nstenergy   = 500         ; Guardar energías en el archivo .edr cada 500 pasos
+
+; 3. Tratamiento de interacciones no enlazadas (Cut-offs)
+cutoff-scheme = Verlet    ; Esquema de listas de vecinos indexadas por matriz de Verlet
+nstlist       = 20        ; Frecuencia de actualización de la lista de vecinos (cada 20 pasos)
+ns_type       = grid      ; Búsqueda de vecinos basada en rejilla tridimensional
+vdw-type      = Cut-off   ; Tratamiento de fuerzas de Van der Waals mediante corte abrupto
+rvdw          = 1.2       ; Radio de corte para interacciones de Van der Waals (nm)
+
+; 4. Electrostática de largo alcance
+coulombtype   = PME       ; Particle Mesh Ewald para gestionar fuerzas electrostáticas de largo alcance
+rcoulomb      = 1.2       ; Radio de corte para el espacio real de Coulomb (nm)
+pme_order     = 4         ; Interpolación cúbica para el cálculo de la rejilla PME
+fourierspacing = 0.16     ; Espaciado máximo de la rejilla para la Transformada de Fourier (nm)
+
+; 5. Condiciones periódicas de contorno y restricciones
+pbc           = xyz       ; Condiciones periódicas de contorno aplicadas en las 3 dimensiones (X, Y, Z)
+constraints   = none      ; No aplicar restricciones de enlaces durante la minimización pura
