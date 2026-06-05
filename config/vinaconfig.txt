@@ -10,7 +10,8 @@
 receptor = data/8V82_prepared.pdbqt
 ligand   = data/PNU120596.pdbqt
 
-# Grid box — centre derived from PNU-120596 centroid in 8V82 chain A
+# Grid box — centre derived from PNU-120596 centroid in 8V82 chain A (orientative)
+# the ones used in the project were dynamically calculated from the centroid of PNU-120596
 center_x = -1.582
 center_y = 12.347
 center_z = -8.903
