@@ -1,0 +1,4 @@
+# La configuración de vina está presente en el script de docking_pipeline.py
+exhaustiveness = 32
+num_modes = 20
+cpu = 1              # por proceso (parallelised via ProcessPoolExecutor)
