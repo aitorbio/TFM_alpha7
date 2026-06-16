@@ -5,26 +5,26 @@ Implementa tres etapas secuenciales del protocolo de cribado virtual
 centrado en el sitio alostérico TMD intrasubunitario del receptor
 nicotínico de acetilcolina α7 (nAChR α7):
 
-  Módulo 3a — Validación por redocking (§3.5.1):
+  Módulo 3a — Validación por redocking (3.5.1):
       Redocking del ligando co-cristalizado (PNU-120596, PDB 8V82) con
       10 ejecuciones independientes. El protocolo se considera validado
       si el RMSD < 2.0 Å en ≥ 7 de 10 ejecuciones.
 
-  Módulo 3b — Benchmarking de enriquecimiento (§3.5.2):
+  Módulo 3b — Benchmarking de enriquecimiento (3.5.2):
       Docking de activos conocidos (PAMs) y decoys property-matched
       generados desde la biblioteca ZINC-22. Se calculan AUC-ROC,
       EF1%, EF5% y BEDROC para cuantificar la capacidad discriminativa
       del protocolo antes del cribado prospectivo.
 
-  Módulo 4  — Cribado virtual prospectivo (§3.6):
+  Módulo 4  — Cribado virtual prospectivo (3.6):
       Conversión de la biblioteca filtrada a PDBQT (OpenBabel + MMFF94),
       docking paralelo con AutoDock Vina 1.2.0 y recopilación de scores.
 
-  Módulo 5  — Análisis IFP y puntuación compuesta (§3.7):
+  Módulo 5  — Análisis IFP y puntuación compuesta (3.7):
       Cálculo de la huella digital de interacción residuo-ligando con
       ProLIF, comparación con el IFP de referencia (PNU-120596) mediante
       similitud de Jaccard, y cálculo de la puntuación compuesta
-      (0.5·S_dock + 0.3·S_IFP + 0.2·S_CNS).
+      (0.4·S_dock + 0.35·S_IFP + 0.25·S_CNS).
 
 NOTA: El análisis de selectividad TMD vs ECD (Módulo 6) se realiza con
 el script independiente docking_ecd_selectivity.py, que emplea un grid
@@ -446,7 +446,7 @@ def run_vina_screening(
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Validación del protocolo por redocking y cálculo de RMSD (§3.5.1)
+# Validación del protocolo por redocking y cálculo de RMSD (3.5.1)
 # calc_rmsd_pdbqt() implementa el algoritmo de Kabsch (SVD) para la
 # superposición óptima de átomos pesados y el cálculo del RMSD resultante.
 # run_redocking_validation() realiza 10 ejecuciones independientes con
@@ -578,7 +578,7 @@ def _extract_best_pose(multi_pdbqt: str, out_path: str) -> None:
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Benchmarking de enriquecimiento (§3.5.2)
+# Benchmarking de enriquecimiento (3.5.2)
 # Se calculan métricas de enriquecimiento estándar en cribado virtual:
 #   AUC-ROC : área bajo la curva ROC (umbral ≥ 0.70)
 #   EF1%    : factor de enriquecimiento al 1% de la base de datos (umbral ≥ 5.0)
@@ -790,7 +790,7 @@ def run_benchmarking(
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Huella digital de interacción residuo-ligando con ProLIF (§3.7.1)
+# Huella digital de interacción residuo-ligando con ProLIF (3.7.1)
 # calc_ifp_prolif() utiliza ProLIF y MDAnalysis para identificar contactos
 # específicos (enlaces de hidrógeno, interacciones hidrofóbicas, π-stacking,
 # etc.) entre la pose de docking y los residuos del sitio TMD.
@@ -920,10 +920,10 @@ def calc_ifp_prolif(
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Puntuación compuesta multi-criterio (§3.6.2)
+# Puntuación compuesta multi-criterio (3.6.2)
 # Integra el score de docking (normalizado por min-max), la similitud IFP
 # y el CNS MPO en una puntuación única para la priorización de candidatos.
-# Las ponderaciones (w1=0.5, w2=0.3, w3=0.2) son decisiones a priori
+# Las ponderaciones (w1=0.4, w2=0.35, w3=0.25) son decisiones a priori
 # que priorizan la complementariedad energética sobre la semejanza de
 # contactos residuales y las propiedades CNS (ver §3.6.2 para justificación
 # y análisis de sensibilidad).
@@ -934,9 +934,9 @@ def composite_score(
     dock_scores: np.ndarray,
     ifp_sims: np.ndarray,
     cns_mpo: np.ndarray,
-    w1: float = 0.5,
-    w2: float = 0.3,
-    w3: float = 0.2,
+    w1: float = 0.4,
+    w2: float = 0.35,
+    w3: float = 0.25,
 ) -> np.ndarray:
     """
     Puntuación compuesta = w1·S_dock + w2·S_IFP + w3·S_CNS.
